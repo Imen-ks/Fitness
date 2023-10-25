@@ -39,8 +39,8 @@ final class MapCoordinator: NSObject, MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
+        if let polyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: polyline)
             renderer.strokeColor = .orange
             renderer.lineWidth = 5
             return renderer

@@ -29,10 +29,11 @@ struct WorkoutMetricsView: View {
                     Text("Distance")
                     Spacer()
                     Text(distanceFormatter(for: workout?.distance?.measure) ?? "")
-                    + Text(" km")
+                    + Text(" \(workout?.distance?.type.unitOfMeasure ?? "")")
                 }
             } label: {
-                Image(systemName: "road.lanes")
+                Image(systemName: workout?.distance?.type.icon ?? "")
+                    .padding(.horizontal, 1)
                     .foregroundStyle(Color.accentColor)
             }
             if allMetrics {
@@ -41,33 +42,35 @@ struct WorkoutMetricsView: View {
                         Text("Average Speed")
                         Spacer()
                         Text(speedFormatter(for: workout?.speed?.measure) ?? "")
-                        + Text(" km/h")
+                        + Text(" \(workout?.speed?.type.unitOfMeasure ?? "")")
                     }
                 } label: {
-                    Image(systemName: "speedometer")
+                    Image(systemName: workout?.speed?.type.icon ?? "")
                         .padding(.horizontal, 5)
                         .foregroundStyle(Color.accentColor)
                 }
-                LabeledContent {
-                    HStack {
-                        Text("Steps")
-                        Spacer()
-                        Text(String(workout?.steps ?? 0))
+                if workout?.type != .cycling {
+                    LabeledContent {
+                        HStack {
+                            Text("Steps")
+                            Spacer()
+                            Text(numberFormatterInteger.string(for: workout?.steps?.count ?? 0) ?? "")
+                        }
+                    } label: {
+                        Image(systemName: workout?.steps?.type.icon ?? "")
+                            .padding(.horizontal, 5)
+                            .foregroundStyle(Color.accentColor)
                     }
-                } label: {
-                    Image(systemName: "shoeprints.fill")
-                        .padding(.horizontal, 5)
-                        .foregroundStyle(Color.accentColor)
                 }
                 LabeledContent {
                     HStack {
                         Text("Calories")
                         Spacer()
-                        Text(String(workout?.calories ?? 0))
-                        + Text(" kcal")
+                        Text(numberFormatterInteger.string(for : workout?.calories?.count ?? 0) ?? "")
+                        + Text(" \(workout?.calories?.type.unitOfMeasure ?? "")")
                     }
                 } label: {
-                    Image(systemName: "scalemass")
+                    Image(systemName: workout?.calories?.type.icon ?? "")
                         .padding(.horizontal, 5)
                         .foregroundStyle(Color.accentColor)
                 }
@@ -75,7 +78,15 @@ struct WorkoutMetricsView: View {
         }
         .font(.subheadline)
     }
-    private let numberFormatter: NumberFormatter = {
+    private let numberFormatterInteger: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 0
+        formatter.minimumFractionDigits = 0
+        return formatter
+    }()
+
+    private let numberFormatterDecimal: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 1
@@ -92,16 +103,18 @@ struct WorkoutMetricsView: View {
 
     private func distanceFormatter(for measure: Measurement<UnitLength>?) -> String? {
         guard let distanceInMeters = measure else { return nil }
-        return numberFormatter.string(for: distanceInMeters.converted(to: UnitLength.kilometers).value)
+        return numberFormatterDecimal.string(for: distanceInMeters.converted(to: UnitLength.kilometers).value)
     }
 
     private func speedFormatter(for measure: Measurement<UnitSpeed>?) -> String? {
         guard let speedInMetersPerSecond = measure else { return nil }
-        return numberFormatter.string(for: speedInMetersPerSecond.converted(to: .kilometersPerHour).value)
+        return numberFormatterDecimal.string(for: speedInMetersPerSecond.converted(to: .kilometersPerHour).value)
     }
 }
 
 #Preview {
-    WorkoutMetricsView(workout: MockData.mockWorkout, allMetrics: true)
+    WorkoutMetricsView(
+        workout: PersistenceController.getWorkoutForPreview(persistenceController: PersistenceController.previewPersistenceController),
+        allMetrics: true)
         .padding(.horizontal)
 }

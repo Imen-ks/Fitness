@@ -17,7 +17,7 @@ struct IncreaseGoalButtonView: View {
             }
         } label: {
             Image(systemName: "plus")
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.bold)
                 .frame(width: 25, height: 25)
                 .padding()

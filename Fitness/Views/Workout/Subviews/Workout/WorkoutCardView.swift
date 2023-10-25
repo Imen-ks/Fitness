@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorkoutCardView: View {
-    let workout: WorkoutType
+    let workoutType: WorkoutType
     let action: () -> ()
 
     var body: some View {
@@ -18,17 +18,17 @@ struct WorkoutCardView: View {
             }
         } label: {
             ZStack(alignment: .top) {
-                Image(workout.banner)
+                Image(workoutType.banner)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                 HStack {
-                    Text(workout.rawValue.uppercased())
-                    Image(systemName: workout.icon)
+                    Text(workoutType.name)
+                    Image(systemName: workoutType.icon)
                 }
                 .padding()
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .opacity(0.8)
             }
             .cornerRadius(10)
@@ -39,6 +39,6 @@ struct WorkoutCardView: View {
 
 #Preview {
     ScrollView {
-        WorkoutCardView(workout: .running) {}
+        WorkoutCardView(workoutType: .running) {}
     }
 }

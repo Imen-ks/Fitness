@@ -15,30 +15,26 @@ struct MapViewUIKit: View {
     let endLocation: CLLocation?
     
     var body: some View {
-        MapViewUI(mapType: .moving, // !!! à mettre à jour
-                startLocation: startLocation,
-                endLocation: endLocation,
-                route: route)
+        MapViewUI(mapType: mapType,
+                  startLocation: startLocation,
+                  endLocation: endLocation,
+                  route: route)
         .cornerRadius(10)
-        .padding()
+        .padding(.vertical)
         .opacity(0.7)
     }
 }
 
 struct MapViewUI: UIViewRepresentable {
-    enum MapType {
-        case fixed
-        case moving
-    }
     let mapView = MKMapView()
-    let regionRadius: CLLocationDistance = 2250
-    let mapType: MapType?
+    let mapType: MapType
+    let regionRadius: CLLocationDistance = 1500
     var startLocation: CLLocation?
     var endLocation: CLLocation?
     var route: [CLLocation]
 
     func makeUIView(context: UIViewRepresentableContext<MapViewUI>) -> MKMapView {
-        let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        let region = getRouteCenterRegion(mapView: mapView)
         mapView.setRegion(region, animated: false)
         mapView.mapType = .standard
         mapView.showsUserLocation = true
@@ -53,7 +49,7 @@ struct MapViewUI: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapViewUI>) {
-        let region = MKCoordinateRegion(center: uiView.userLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        let region = getRouteCenterRegion(mapView: uiView)
         uiView.setRegion(region, animated: false)
         uiView.removeAnnotations(uiView.annotations)
         uiView.removeOverlays(uiView.overlays)
@@ -64,6 +60,26 @@ struct MapViewUI: UIViewRepresentable {
 
     func makeCoordinator() -> MapCoordinator {
         .init(self)
+    }
+
+    private func getRouteCenterRegion(mapView: MKMapView) -> MKCoordinateRegion {
+        let approximateRouteCenterLatitude = ((endLocation?.coordinate.latitude ?? 0) + (startLocation?.coordinate.latitude ?? 0)) / 2
+        let approximateRouteCenterLongitude = ((endLocation?.coordinate.longitude ?? 0) + (startLocation?.coordinate.longitude ?? 0)) / 2
+        let routeCenterLocation = CLLocationCoordinate2D(
+            latitude: approximateRouteCenterLatitude,
+            longitude: approximateRouteCenterLongitude)
+        switch mapType {
+        case .stationary:
+            return MKCoordinateRegion(
+                center: routeCenterLocation,
+                latitudinalMeters: regionRadius,
+                longitudinalMeters: regionRadius)
+        case .moving:
+            return MKCoordinateRegion(
+                center: mapView.userLocation.coordinate,
+                latitudinalMeters: regionRadius,
+                longitudinalMeters: regionRadius)
+        }
     }
 }
 
@@ -95,8 +111,8 @@ extension MapViewUI {
 
 #Preview {
     MapViewUIKit(
-        mapType: .moving,
-        startLocation: MockData.mockCoords.first,
-        route: MockData.mockCoords,
-        endLocation: MockData.mockCoords.last)
+        mapType: .stationary,
+        startLocation: PersistenceController.mockCoords.first,
+        route: PersistenceController.mockCoords,
+        endLocation: PersistenceController.mockCoords.last)
 }

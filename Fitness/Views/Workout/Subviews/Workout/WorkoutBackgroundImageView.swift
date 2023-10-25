@@ -1,5 +1,5 @@
 //
-//  BackgroundImageView.swift
+//  WorkoutBackgroundImageView.swift
 //  Fitness
 //
 //  Created by Imen Ksouri on 07/10/2023.

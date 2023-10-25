@@ -1,5 +1,5 @@
 //
-//  ChartView.swift
+//  WorkoutChartView.swift
 //  Fitness
 //
 //  Created by Imen Ksouri on 09/10/2023.
@@ -10,7 +10,7 @@ import Charts
 
 struct WorkoutChartView: View {
     let workout: Workout?
-    let metric: Metric
+    let metric: MetricType
     var data: [ChartData] {
         getChartData()
     }
@@ -34,23 +34,13 @@ struct WorkoutChartView: View {
                             x: .value("Distance", element.distance),
                             y: .value("Speed", element.metric))
                         .opacity(0.3)
-                        RuleMark(y: workout?.type == .cycling
-                                 ? .value("Average", speedFormatter(for: workout?.speed?.measure))
-                                 : .value("Average", paceFormatter(for: workout?.speed?.measure))
-                        )
+                        RuleMark(y: .value("Average", getAverage(for: workout?.type)))
                         .lineStyle(StrokeStyle(lineWidth: 1))
                         .annotation(position: .top, alignment: .leading) {
-                            ZStack {
-                                switch workout?.type {
-                                case .cycling:
-                                    Text("Average speed: \(formatter.string(for: speedFormatter(for: workout?.speed?.measure)) ?? "") km/h")
-                                default:
-                                    Text("Average pace: \(formatter.string(for: paceFormatter(for: workout?.speed?.measure)) ?? "") min/km")
-                                        .padding(.horizontal, 5)
-                                }
-                            }
-                            .font(.caption)
-                            .foregroundStyle(Color.accentColor)
+                            Text(getFormattedAverage(for: workout?.type))
+                                .padding(.horizontal, 5)
+                                .font(.caption)
+                                .foregroundStyle(Color.accentColor)
                         }
                     }
                 }
@@ -76,16 +66,6 @@ struct WorkoutChartView: View {
         return formatter
     }()
 
-    private func distanceFormatter(for distance: Measurement<UnitLength>?) -> Double {
-        guard let distanceInMeters = distance else { return 0 }
-        return distanceInMeters.converted(to: .kilometers).value
-    }
-
-    private func speedFormatter(for speed: Measurement<UnitSpeed>?) -> Double {
-        guard let speedInMetersPerSecond = speed else { return 0 }
-        return speedInMetersPerSecond.converted(to: .kilometersPerHour).value
-    }
-
     private func paceFormatter(for speed: Measurement<UnitSpeed>?) -> Double {
         guard let speedInMetersPerSecond = speed else { return 0 }
         return 1000 / 60 / speedInMetersPerSecond.value // min/km
@@ -95,49 +75,69 @@ struct WorkoutChartView: View {
         var data: [ChartData] = []
         switch metric {
         case .cadence:
-            for index in 0..<(workout?.distances.count ?? 0) {
+            for index in 0..<(workout?.distances?.count ?? 0) {
                 data.append(
                     ChartData.init(
-                    distance: distanceFormatter(
-                        for: workout?.distances[index]),
+                        distance: workout?.distances?[index].value ?? 0,
                     metric: workout?.type == .cycling
-                    ? speedFormatter(for: workout?.speeds[index])
-                    : paceFormatter(for: workout?.speeds[index])
-                ))
+                        ? workout?.speeds?[index].converted(to: .kilometersPerHour).value ?? 0
+                        : paceFormatter(for: workout?.speeds?[index])
+                    )
+                )
             }
             return data
         case .altitude:
-            for index in 0..<(workout?.distances.count ?? 0) {
+            for index in 0..<(workout?.distances?.count ?? 0) {
                 data.append(
                     ChartData.init(
-                    distance: distanceFormatter(
-                        for: workout?.distances[index]),
-                    metric: workout?.altitudes[index].value ?? 0
-                ))
+                        distance: workout?.distances?[index].value ?? 0,
+                        metric: workout?.altitudes?[index].value ?? 0
+                    )
+                )
             }
             return data
+        }
+    }
+
+    struct ChartData: Identifiable {
+        let id = UUID()
+        let distance: Double
+        let metric: Double
+    }
+
+    enum MetricType {
+        case cadence
+        case altitude
+    }
+
+    private func getAverage(for type: WorkoutType?) -> Double {
+        switch type {
+        case .cycling: return workout?.speed?.value ?? 0
+        default: return paceFormatter(for: workout?.speed?.measure)
+        }
+    }
+
+    private func getFormattedAverage(for type: WorkoutType?) -> String {
+        switch type {
+        case .cycling:
+            return "Average speed: " + (formatter.string(for: workout?.speed?.value ?? 0) ?? "") + " km/h"
+        default:
+            return "Average pace: " + (formatter.string(for: paceFormatter(for: workout?.speed?.measure)) ?? "") + " min/km"
         }
     }
 }
 
 #Preview {
     VStack {
-        WorkoutChartView(workout: MockData.mockWorkout1, metric: .cadence)
+        WorkoutChartView(
+            workout: PersistenceController.getWorkoutForPreview(persistenceController: PersistenceController.previewPersistenceController),
+            metric: .cadence)
             .padding()
             .frame(height: 250)
-        WorkoutChartView(workout: MockData.mockWorkout1, metric: .altitude)
+        WorkoutChartView(
+            workout: PersistenceController.getWorkoutForPreview(persistenceController: PersistenceController.previewPersistenceController),
+            metric: .altitude)
             .padding()
             .frame(height: 250)
     }
-}
-
-struct ChartData: Identifiable {
-    let id = UUID()
-    let distance: Double
-    let metric: Double
-}
-
-enum Metric {
-    case cadence
-    case altitude
 }

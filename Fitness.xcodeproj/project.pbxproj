@@ -7,8 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80204052AC9B1E50065C00D /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204042AC9B1E50065C00D /* TimerManager.swift */; };
+		A80204072AC9B1F70065C00D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204062AC9B1F70065C00D /* TimerView.swift */; };
+		A802040B2ACB05600065C00D /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802040A2ACB05600065C00D /* TimerButtonView.swift */; };
+		A802040D2ACB30DE0065C00D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802040C2ACB30DE0065C00D /* TabBarView.swift */; };
+		A80204142ACB74790065C00D /* RecordWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204132ACB74790065C00D /* RecordWorkoutView.swift */; };
+		A80204162ACB74B50065C00D /* BeginWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204152ACB74B50065C00D /* BeginWorkoutView.swift */; };
+		A80204182ACC28660065C00D /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204172ACC28660065C00D /* WorkoutCardView.swift */; };
+		A802041A2ACC32070065C00D /* MapViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204192ACC32070065C00D /* MapViewSwiftUI.swift */; };
+		A802041C2ACC32FF0065C00D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802041B2ACC32FF0065C00D /* LocationManager.swift */; };
+		A80204202ACCA9410065C00D /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802041F2ACCA9410065C00D /* WorkoutViewModel.swift */; };
+		A80204222ACDDDE30065C00D /* MapViewUIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204212ACDDDE30065C00D /* MapViewUIKit.swift */; };
+		A80204252ACF84C00065C00D /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204242ACF84C00065C00D /* LocationAnnotationView.swift */; };
+		A80204272ACF85230065C00D /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204262ACF85230065C00D /* MapCoordinator.swift */; };
+		A802042F2AD097EC0065C00D /* MeasurementBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802042E2AD097EC0065C00D /* MeasurementBannerView.swift */; };
+		A80204332AD0B4C90065C00D /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204322AD0B4C90065C00D /* Workout.swift */; };
+		A80204372AD0FF8D0065C00D /* WorkoutBackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204362AD0FF8D0065C00D /* WorkoutBackgroundImageView.swift */; };
+		A80204392AD190BB0065C00D /* WorkoutIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204382AD190BB0065C00D /* WorkoutIconView.swift */; };
+		A802043B2AD199040065C00D /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802043A2AD199040065C00D /* Distance.swift */; };
+		A802043D2AD199160065C00D /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802043C2AD199160065C00D /* Speed.swift */; };
+		A80204412AD1BC1A0065C00D /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204402AD1BC1A0065C00D /* Measure.swift */; };
+		A80204432AD1BDA70065C00D /* MeasureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204422AD1BDA70065C00D /* MeasureCardView.swift */; };
+		A80204472AD223AB0065C00D /* WorkoutHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204462AD223AB0065C00D /* WorkoutHistoryView.swift */; };
+		A802044A2AD224490065C00D /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204492AD224490065C00D /* WorkoutRowView.swift */; };
+		A802044C2AD305D50065C00D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802044B2AD305D50065C00D /* MapView.swift */; };
+		A80204502AD34FAB0065C00D /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802044F2AD34FAB0065C00D /* WorkoutDetailView.swift */; };
+		A80204522AD350F30065C00D /* WorkoutHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204512AD350F30065C00D /* WorkoutHistoryViewModel.swift */; };
+		A80204542AD36BAB0065C00D /* WorkoutDateAndTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204532AD36BAB0065C00D /* WorkoutDateAndTypeView.swift */; };
+		A80204562AD3732A0065C00D /* WorkoutMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204552AD3732A0065C00D /* WorkoutMetricsView.swift */; };
+		A80204582AD4577C0065C00D /* WorkoutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204572AD4577C0065C00D /* WorkoutChartView.swift */; };
+		A802045B2AD57C830065C00D /* AccessDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802045A2AD57C820065C00D /* AccessDeniedView.swift */; };
+		A802045D2AD69B6D0065C00D /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802045C2AD69B6D0065C00D /* MotionManager.swift */; };
+		A80204662AD93CF90065C00D /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204652AD93CF90065C00D /* Step.swift */; };
+		A80204682AD93D4E0065C00D /* Calorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204672AD93D4E0065C00D /* Calorie.swift */; };
+		A802046C2AD946F30065C00D /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802046B2AD946F30065C00D /* CalendarView.swift */; };
+		A80204722ADC746D0065C00D /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204712ADC746D0065C00D /* CalendarManager.swift */; };
+		A80204762ADC7DFC0065C00D /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204752ADC7DFC0065C00D /* WeekView.swift */; };
+		A80204782ADC9C3E0065C00D /* GlobalStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204772ADC9C3E0065C00D /* GlobalStatisticsView.swift */; };
+		A802047A2ADC9C560065C00D /* DailyStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204792ADC9C560065C00D /* DailyStatisticsView.swift */; };
+		A802047D2ADD9B420065C00D /* MeasureDonutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802047C2ADD9B420065C00D /* MeasureDonutView.swift */; };
+		A80204812ADDF2DB0065C00D /* DailyStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204802ADDF2DB0065C00D /* DailyStatisticsViewModel.swift */; };
+		A80204852ADF56CF0065C00D /* GlobalStatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204842ADF56CE0065C00D /* GlobalStatisticsViewModel.swift */; };
+		A80204872ADF5C530065C00D /* PeriodChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204862ADF5C530065C00D /* PeriodChartView.swift */; };
+		A802048B2AE0B3550065C00D /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802048A2AE0B3550065C00D /* Metric.swift */; };
+		A802048E2AE273CB0065C00D /* DecreaseGoalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802048D2AE273CB0065C00D /* DecreaseGoalButtonView.swift */; };
+		A80204902AE2741B0065C00D /* IncreaseGoalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802048F2AE2741B0065C00D /* IncreaseGoalButtonView.swift */; };
+		A80204942AE275330065C00D /* GoalSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204932AE275330065C00D /* GoalSetupView.swift */; };
+		A80204972AE27E3E0065C00D /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204962AE27E3E0065C00D /* GoalsView.swift */; };
+		A802049A2AE333EF0065C00D /* FilterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204992AE333EF0065C00D /* FilterMenuView.swift */; };
+		A80204A22AE461940065C00D /* WorkoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A12AE461940065C00D /* WorkoutType.swift */; };
+		A80204AD2AE49D4A0065C00D /* WorkoutEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A32AE49D4A0065C00D /* WorkoutEntity+CoreDataClass.swift */; };
+		A80204AE2AE49D4A0065C00D /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A42AE49D4A0065C00D /* WorkoutEntity+CoreDataProperties.swift */; };
+		A80204AF2AE49D4A0065C00D /* CalorieEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A52AE49D4A0065C00D /* CalorieEntity+CoreDataClass.swift */; };
+		A80204B02AE49D4A0065C00D /* CalorieEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A62AE49D4A0065C00D /* CalorieEntity+CoreDataProperties.swift */; };
+		A80204B12AE49D4A0065C00D /* SpeedEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A72AE49D4A0065C00D /* SpeedEntity+CoreDataClass.swift */; };
+		A80204B22AE49D4A0065C00D /* SpeedEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A82AE49D4A0065C00D /* SpeedEntity+CoreDataProperties.swift */; };
+		A80204B32AE49D4A0065C00D /* DistanceEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204A92AE49D4A0065C00D /* DistanceEntity+CoreDataClass.swift */; };
+		A80204B42AE49D4A0065C00D /* DistanceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204AA2AE49D4A0065C00D /* DistanceEntity+CoreDataProperties.swift */; };
+		A80204B52AE49D4A0065C00D /* StepEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204AB2AE49D4A0065C00D /* StepEntity+CoreDataClass.swift */; };
+		A80204B62AE49D4A0065C00D /* StepEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204AC2AE49D4A0065C00D /* StepEntity+CoreDataProperties.swift */; };
+		A80204C52AE4CA120065C00D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204C42AE4CA120065C00D /* CoreDataManager.swift */; };
+		A80204C82AE52F050065C00D /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204C72AE52F050065C00D /* MockData.swift */; };
+		A80204CA2AE53A0D0065C00D /* FetchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204C92AE53A0D0065C00D /* FetchRequests.swift */; };
+		A80204CC2AE53A9A0065C00D /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204CB2AE53A9A0065C00D /* Methods.swift */; };
+		A80204DD2AE6E7150065C00D /* DataForPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80204DC2AE6E7150065C00D /* DataForPreview.swift */; };
 		A81DEB912AC908ED0098FB04 /* FitnessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DEB902AC908ED0098FB04 /* FitnessApp.swift */; };
-		A81DEB932AC908ED0098FB04 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DEB922AC908ED0098FB04 /* ContentView.swift */; };
 		A81DEB952AC908EF0098FB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81DEB942AC908EF0098FB04 /* Assets.xcassets */; };
 		A81DEB982AC908EF0098FB04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A81DEB972AC908EF0098FB04 /* Preview Assets.xcassets */; };
 		A81DEB9A2AC908EF0098FB04 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DEB992AC908EF0098FB04 /* Persistence.swift */; };
@@ -36,9 +99,73 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A80204042AC9B1E50065C00D /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		A80204062AC9B1F70065C00D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A802040A2ACB05600065C00D /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
+		A802040C2ACB30DE0065C00D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		A80204132ACB74790065C00D /* RecordWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWorkoutView.swift; sourceTree = "<group>"; };
+		A80204152ACB74B50065C00D /* BeginWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginWorkoutView.swift; sourceTree = "<group>"; };
+		A80204172ACC28660065C00D /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		A80204192ACC32070065C00D /* MapViewSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSwiftUI.swift; sourceTree = "<group>"; };
+		A802041B2ACC32FF0065C00D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A802041D2ACC62A80065C00D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A802041F2ACCA9410065C00D /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		A80204212ACDDDE30065C00D /* MapViewUIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewUIKit.swift; sourceTree = "<group>"; };
+		A80204242ACF84C00065C00D /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
+		A80204262ACF85230065C00D /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		A802042E2AD097EC0065C00D /* MeasurementBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementBannerView.swift; sourceTree = "<group>"; };
+		A80204322AD0B4C90065C00D /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		A80204362AD0FF8D0065C00D /* WorkoutBackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBackgroundImageView.swift; sourceTree = "<group>"; };
+		A80204382AD190BB0065C00D /* WorkoutIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutIconView.swift; sourceTree = "<group>"; };
+		A802043A2AD199040065C00D /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		A802043C2AD199160065C00D /* Speed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
+		A80204402AD1BC1A0065C00D /* Measure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		A80204422AD1BDA70065C00D /* MeasureCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureCardView.swift; sourceTree = "<group>"; };
+		A80204462AD223AB0065C00D /* WorkoutHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryView.swift; sourceTree = "<group>"; };
+		A80204492AD224490065C00D /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
+		A802044B2AD305D50065C00D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A802044F2AD34FAB0065C00D /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		A80204512AD350F30065C00D /* WorkoutHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryViewModel.swift; sourceTree = "<group>"; };
+		A80204532AD36BAB0065C00D /* WorkoutDateAndTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDateAndTypeView.swift; sourceTree = "<group>"; };
+		A80204552AD3732A0065C00D /* WorkoutMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMetricsView.swift; sourceTree = "<group>"; };
+		A80204572AD4577C0065C00D /* WorkoutChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutChartView.swift; sourceTree = "<group>"; };
+		A802045A2AD57C820065C00D /* AccessDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessDeniedView.swift; sourceTree = "<group>"; };
+		A802045C2AD69B6D0065C00D /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		A80204652AD93CF90065C00D /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		A80204672AD93D4E0065C00D /* Calorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calorie.swift; sourceTree = "<group>"; };
+		A802046B2AD946F30065C00D /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		A80204712ADC746D0065C00D /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		A80204752ADC7DFC0065C00D /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
+		A80204772ADC9C3E0065C00D /* GlobalStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsView.swift; sourceTree = "<group>"; };
+		A80204792ADC9C560065C00D /* DailyStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStatisticsView.swift; sourceTree = "<group>"; };
+		A802047C2ADD9B420065C00D /* MeasureDonutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureDonutView.swift; sourceTree = "<group>"; };
+		A80204802ADDF2DB0065C00D /* DailyStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStatisticsViewModel.swift; sourceTree = "<group>"; };
+		A80204842ADF56CE0065C00D /* GlobalStatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsViewModel.swift; sourceTree = "<group>"; };
+		A80204862ADF5C530065C00D /* PeriodChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodChartView.swift; sourceTree = "<group>"; };
+		A802048A2AE0B3550065C00D /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		A802048D2AE273CB0065C00D /* DecreaseGoalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecreaseGoalButtonView.swift; sourceTree = "<group>"; };
+		A802048F2AE2741B0065C00D /* IncreaseGoalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseGoalButtonView.swift; sourceTree = "<group>"; };
+		A80204932AE275330065C00D /* GoalSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalSetupView.swift; sourceTree = "<group>"; };
+		A80204962AE27E3E0065C00D /* GoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsView.swift; sourceTree = "<group>"; };
+		A80204992AE333EF0065C00D /* FilterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMenuView.swift; sourceTree = "<group>"; };
+		A80204A12AE461940065C00D /* WorkoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutType.swift; sourceTree = "<group>"; };
+		A80204A32AE49D4A0065C00D /* WorkoutEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A80204A42AE49D4A0065C00D /* WorkoutEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A80204A52AE49D4A0065C00D /* CalorieEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalorieEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A80204A62AE49D4A0065C00D /* CalorieEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalorieEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A80204A72AE49D4A0065C00D /* SpeedEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeedEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A80204A82AE49D4A0065C00D /* SpeedEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeedEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A80204A92AE49D4A0065C00D /* DistanceEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DistanceEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A80204AA2AE49D4A0065C00D /* DistanceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DistanceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A80204AB2AE49D4A0065C00D /* StepEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A80204AC2AE49D4A0065C00D /* StepEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A80204C42AE4CA120065C00D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A80204C72AE52F050065C00D /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		A80204C92AE53A0D0065C00D /* FetchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequests.swift; sourceTree = "<group>"; };
+		A80204CB2AE53A9A0065C00D /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
+		A80204DC2AE6E7150065C00D /* DataForPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataForPreview.swift; sourceTree = "<group>"; };
 		A81DEB8D2AC908ED0098FB04 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81DEB902AC908ED0098FB04 /* FitnessApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessApp.swift; sourceTree = "<group>"; };
-		A81DEB922AC908ED0098FB04 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A81DEB942AC908EF0098FB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A81DEB972AC908EF0098FB04 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A81DEB992AC908EF0098FB04 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -75,6 +202,387 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A80204082ACB050A0065C00D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A802040E2ACB3AE10065C00D /* TabBar */,
+				A802040F2ACB3AF10065C00D /* Workout */,
+				A802042A2ACF87B20065C00D /* Map */,
+				A80204302AD0B4720065C00D /* History */,
+				A802046A2AD9466E0065C00D /* Statistics */,
+				A802048C2AE2735A0065C00D /* Goals */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A80204092ACB051A0065C00D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A802041F2ACCA9410065C00D /* WorkoutViewModel.swift */,
+				A80204512AD350F30065C00D /* WorkoutHistoryViewModel.swift */,
+				A80204842ADF56CE0065C00D /* GlobalStatisticsViewModel.swift */,
+				A80204802ADDF2DB0065C00D /* DailyStatisticsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A802040E2ACB3AE10065C00D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A802040C2ACB30DE0065C00D /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A802040F2ACB3AF10065C00D /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				A80204152ACB74B50065C00D /* BeginWorkoutView.swift */,
+				A80204132ACB74790065C00D /* RecordWorkoutView.swift */,
+				A80204122ACB40B50065C00D /* Subviews */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		A80204122ACB40B50065C00D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A80204602AD88E800065C00D /* LocationAccess */,
+				A802042C2ACF87D80065C00D /* Workout */,
+				A802042D2AD097C20065C00D /* Measures */,
+				A802042B2ACF87C30065C00D /* Timer */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A802041E2ACCA9180065C00D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A802049B2AE44F780065C00D /* CoreLocation */,
+				A802049C2AE44F980065C00D /* CoreMotion */,
+				A802049D2AE44FB20065C00D /* Timer */,
+				A802049E2AE44FCF0065C00D /* Calendar */,
+				A802049F2AE44FDD0065C00D /* CoreData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A802042A2ACF87B20065C00D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A802044B2AD305D50065C00D /* MapView.swift */,
+				A80204192ACC32070065C00D /* MapViewSwiftUI.swift */,
+				A80204212ACDDDE30065C00D /* MapViewUIKit.swift */,
+				A80204262ACF85230065C00D /* MapCoordinator.swift */,
+				A80204242ACF84C00065C00D /* LocationAnnotationView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		A802042B2ACF87C30065C00D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A80204062AC9B1F70065C00D /* TimerView.swift */,
+				A802040A2ACB05600065C00D /* TimerButtonView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		A802042C2ACF87D80065C00D /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				A80204172ACC28660065C00D /* WorkoutCardView.swift */,
+				A80204362AD0FF8D0065C00D /* WorkoutBackgroundImageView.swift */,
+				A80204382AD190BB0065C00D /* WorkoutIconView.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		A802042D2AD097C20065C00D /* Measures */ = {
+			isa = PBXGroup;
+			children = (
+				A802042E2AD097EC0065C00D /* MeasurementBannerView.swift */,
+				A80204422AD1BDA70065C00D /* MeasureCardView.swift */,
+			);
+			path = Measures;
+			sourceTree = "<group>";
+		};
+		A80204302AD0B4720065C00D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A80204462AD223AB0065C00D /* WorkoutHistoryView.swift */,
+				A802044F2AD34FAB0065C00D /* WorkoutDetailView.swift */,
+				A80204482AD223C70065C00D /* Subviews */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		A80204312AD0B47A0065C00D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A80204A02AE461050065C00D /* Enum */,
+				A80204322AD0B4C90065C00D /* Workout.swift */,
+				A802043A2AD199040065C00D /* Distance.swift */,
+				A802043C2AD199160065C00D /* Speed.swift */,
+				A80204652AD93CF90065C00D /* Step.swift */,
+				A80204672AD93D4E0065C00D /* Calorie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A80204482AD223C70065C00D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A80204982AE333C90065C00D /* FilterMenu */,
+				A80204632AD8C41F0065C00D /* Row */,
+				A80204642AD8C42C0065C00D /* Metrics */,
+				A80204692AD93FE00065C00D /* Chart */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A80204602AD88E800065C00D /* LocationAccess */ = {
+			isa = PBXGroup;
+			children = (
+				A802045A2AD57C820065C00D /* AccessDeniedView.swift */,
+			);
+			path = LocationAccess;
+			sourceTree = "<group>";
+		};
+		A80204632AD8C41F0065C00D /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				A80204492AD224490065C00D /* WorkoutRowView.swift */,
+				A80204532AD36BAB0065C00D /* WorkoutDateAndTypeView.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		A80204642AD8C42C0065C00D /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				A80204552AD3732A0065C00D /* WorkoutMetricsView.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
+		A80204692AD93FE00065C00D /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				A80204572AD4577C0065C00D /* WorkoutChartView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		A802046A2AD9466E0065C00D /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				A80204772ADC9C3E0065C00D /* GlobalStatisticsView.swift */,
+				A80204792ADC9C560065C00D /* DailyStatisticsView.swift */,
+				A802047B2ADC9C650065C00D /* Subviews */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		A802047B2ADC9C650065C00D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A80204822ADDF9C60065C00D /* Calendar */,
+				A80204832ADDF9E10065C00D /* DailyMeasure */,
+				A80204882ADF5C590065C00D /* Chart */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A80204822ADDF9C60065C00D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A802046B2AD946F30065C00D /* CalendarView.swift */,
+				A80204752ADC7DFC0065C00D /* WeekView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A80204832ADDF9E10065C00D /* DailyMeasure */ = {
+			isa = PBXGroup;
+			children = (
+				A802047C2ADD9B420065C00D /* MeasureDonutView.swift */,
+			);
+			path = DailyMeasure;
+			sourceTree = "<group>";
+		};
+		A80204882ADF5C590065C00D /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				A80204862ADF5C530065C00D /* PeriodChartView.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		A80204892AE0B3320065C00D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A802048A2AE0B3550065C00D /* Metric.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A802048C2AE2735A0065C00D /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				A80204962AE27E3E0065C00D /* GoalsView.swift */,
+				A80204952AE27DD10065C00D /* Subviews */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
+		A80204952AE27DD10065C00D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A80204932AE275330065C00D /* GoalSetupView.swift */,
+				A802048F2AE2741B0065C00D /* IncreaseGoalButtonView.swift */,
+				A802048D2AE273CB0065C00D /* DecreaseGoalButtonView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A80204982AE333C90065C00D /* FilterMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A80204992AE333EF0065C00D /* FilterMenuView.swift */,
+			);
+			path = FilterMenu;
+			sourceTree = "<group>";
+		};
+		A802049B2AE44F780065C00D /* CoreLocation */ = {
+			isa = PBXGroup;
+			children = (
+				A802041B2ACC32FF0065C00D /* LocationManager.swift */,
+			);
+			path = CoreLocation;
+			sourceTree = "<group>";
+		};
+		A802049C2AE44F980065C00D /* CoreMotion */ = {
+			isa = PBXGroup;
+			children = (
+				A802045C2AD69B6D0065C00D /* MotionManager.swift */,
+			);
+			path = CoreMotion;
+			sourceTree = "<group>";
+		};
+		A802049D2AE44FB20065C00D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A80204042AC9B1E50065C00D /* TimerManager.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		A802049E2AE44FCF0065C00D /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A80204712ADC746D0065C00D /* CalendarManager.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A802049F2AE44FDD0065C00D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A80204B72AE49DCC0065C00D /* NSManagedObject */,
+				A80204D42AE5DB870065C00D /* DataManager */,
+				A80204D52AE5DB9C0065C00D /* PersistenceController */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A80204A02AE461050065C00D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A80204402AD1BC1A0065C00D /* Measure.swift */,
+				A80204A12AE461940065C00D /* WorkoutType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		A80204B72AE49DCC0065C00D /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				A81DEB9B2AC908EF0098FB04 /* Fitness.xcdatamodeld */,
+				A80204B92AE49F7F0065C00D /* Workout */,
+				A80204BA2AE49F930065C00D /* Distance */,
+				A80204BB2AE49FA80065C00D /* Speed */,
+				A80204BC2AE49FE20065C00D /* Step */,
+				A80204BD2AE4A00F0065C00D /* Calorie */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		A80204B92AE49F7F0065C00D /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				A80204A32AE49D4A0065C00D /* WorkoutEntity+CoreDataClass.swift */,
+				A80204A42AE49D4A0065C00D /* WorkoutEntity+CoreDataProperties.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		A80204BA2AE49F930065C00D /* Distance */ = {
+			isa = PBXGroup;
+			children = (
+				A80204A92AE49D4A0065C00D /* DistanceEntity+CoreDataClass.swift */,
+				A80204AA2AE49D4A0065C00D /* DistanceEntity+CoreDataProperties.swift */,
+			);
+			path = Distance;
+			sourceTree = "<group>";
+		};
+		A80204BB2AE49FA80065C00D /* Speed */ = {
+			isa = PBXGroup;
+			children = (
+				A80204A72AE49D4A0065C00D /* SpeedEntity+CoreDataClass.swift */,
+				A80204A82AE49D4A0065C00D /* SpeedEntity+CoreDataProperties.swift */,
+			);
+			path = Speed;
+			sourceTree = "<group>";
+		};
+		A80204BC2AE49FE20065C00D /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				A80204AB2AE49D4A0065C00D /* StepEntity+CoreDataClass.swift */,
+				A80204AC2AE49D4A0065C00D /* StepEntity+CoreDataProperties.swift */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		A80204BD2AE4A00F0065C00D /* Calorie */ = {
+			isa = PBXGroup;
+			children = (
+				A80204A52AE49D4A0065C00D /* CalorieEntity+CoreDataClass.swift */,
+				A80204A62AE49D4A0065C00D /* CalorieEntity+CoreDataProperties.swift */,
+			);
+			path = Calorie;
+			sourceTree = "<group>";
+		};
+		A80204D42AE5DB870065C00D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				A80204C42AE4CA120065C00D /* CoreDataManager.swift */,
+				A80204C92AE53A0D0065C00D /* FetchRequests.swift */,
+				A80204CB2AE53A9A0065C00D /* Methods.swift */,
+				A80204C72AE52F050065C00D /* MockData.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		A80204D52AE5DB9C0065C00D /* PersistenceController */ = {
+			isa = PBXGroup;
+			children = (
+				A81DEB992AC908EF0098FB04 /* Persistence.swift */,
+				A80204DC2AE6E7150065C00D /* DataForPreview.swift */,
+			);
+			path = PersistenceController;
+			sourceTree = "<group>";
+		};
 		A81DEB842AC908ED0098FB04 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +606,14 @@
 		A81DEB8F2AC908ED0098FB04 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				A802041D2ACC62A80065C00D /* Info.plist */,
 				A81DEB902AC908ED0098FB04 /* FitnessApp.swift */,
-				A81DEB922AC908ED0098FB04 /* ContentView.swift */,
 				A81DEB942AC908EF0098FB04 /* Assets.xcassets */,
-				A81DEB992AC908EF0098FB04 /* Persistence.swift */,
-				A81DEB9B2AC908EF0098FB04 /* Fitness.xcdatamodeld */,
+				A802041E2ACCA9180065C00D /* Services */,
+				A80204892AE0B3320065C00D /* Protocol */,
+				A80204312AD0B47A0065C00D /* Models */,
+				A80204092ACB051A0065C00D /* ViewModels */,
+				A80204082ACB050A0065C00D /* Views */,
 				A81DEB962AC908EF0098FB04 /* Preview Content */,
 			);
 			path = Fitness;
@@ -197,7 +708,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					A81DEB8C2AC908ED0098FB04 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -263,10 +774,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80204DD2AE6E7150065C00D /* DataForPreview.swift in Sources */,
+				A802044A2AD224490065C00D /* WorkoutRowView.swift in Sources */,
+				A802045D2AD69B6D0065C00D /* MotionManager.swift in Sources */,
+				A802044C2AD305D50065C00D /* MapView.swift in Sources */,
+				A80204202ACCA9410065C00D /* WorkoutViewModel.swift in Sources */,
+				A802040B2ACB05600065C00D /* TimerButtonView.swift in Sources */,
+				A80204762ADC7DFC0065C00D /* WeekView.swift in Sources */,
+				A80204412AD1BC1A0065C00D /* Measure.swift in Sources */,
+				A802047D2ADD9B420065C00D /* MeasureDonutView.swift in Sources */,
+				A802041A2ACC32070065C00D /* MapViewSwiftUI.swift in Sources */,
+				A802046C2AD946F30065C00D /* CalendarView.swift in Sources */,
+				A802043D2AD199160065C00D /* Speed.swift in Sources */,
+				A802047A2ADC9C560065C00D /* DailyStatisticsView.swift in Sources */,
+				A80204B52AE49D4A0065C00D /* StepEntity+CoreDataClass.swift in Sources */,
+				A80204542AD36BAB0065C00D /* WorkoutDateAndTypeView.swift in Sources */,
+				A80204392AD190BB0065C00D /* WorkoutIconView.swift in Sources */,
+				A80204332AD0B4C90065C00D /* Workout.swift in Sources */,
+				A80204B42AE49D4A0065C00D /* DistanceEntity+CoreDataProperties.swift in Sources */,
+				A802048E2AE273CB0065C00D /* DecreaseGoalButtonView.swift in Sources */,
+				A80204072AC9B1F70065C00D /* TimerView.swift in Sources */,
+				A802040D2ACB30DE0065C00D /* TabBarView.swift in Sources */,
+				A80204AE2AE49D4A0065C00D /* WorkoutEntity+CoreDataProperties.swift in Sources */,
+				A80204782ADC9C3E0065C00D /* GlobalStatisticsView.swift in Sources */,
+				A80204AF2AE49D4A0065C00D /* CalorieEntity+CoreDataClass.swift in Sources */,
+				A80204852ADF56CF0065C00D /* GlobalStatisticsViewModel.swift in Sources */,
+				A80204B02AE49D4A0065C00D /* CalorieEntity+CoreDataProperties.swift in Sources */,
+				A80204722ADC746D0065C00D /* CalendarManager.swift in Sources */,
+				A80204182ACC28660065C00D /* WorkoutCardView.swift in Sources */,
 				A81DEB9D2AC908EF0098FB04 /* Fitness.xcdatamodeld in Sources */,
+				A80204502AD34FAB0065C00D /* WorkoutDetailView.swift in Sources */,
+				A80204662AD93CF90065C00D /* Step.swift in Sources */,
+				A802045B2AD57C830065C00D /* AccessDeniedView.swift in Sources */,
+				A80204AD2AE49D4A0065C00D /* WorkoutEntity+CoreDataClass.swift in Sources */,
+				A802042F2AD097EC0065C00D /* MeasurementBannerView.swift in Sources */,
+				A80204872ADF5C530065C00D /* PeriodChartView.swift in Sources */,
+				A802048B2AE0B3550065C00D /* Metric.swift in Sources */,
+				A80204C82AE52F050065C00D /* MockData.swift in Sources */,
+				A80204252ACF84C00065C00D /* LocationAnnotationView.swift in Sources */,
+				A80204522AD350F30065C00D /* WorkoutHistoryViewModel.swift in Sources */,
+				A80204C52AE4CA120065C00D /* CoreDataManager.swift in Sources */,
+				A80204B12AE49D4A0065C00D /* SpeedEntity+CoreDataClass.swift in Sources */,
+				A80204372AD0FF8D0065C00D /* WorkoutBackgroundImageView.swift in Sources */,
+				A802043B2AD199040065C00D /* Distance.swift in Sources */,
+				A80204162ACB74B50065C00D /* BeginWorkoutView.swift in Sources */,
+				A80204CA2AE53A0D0065C00D /* FetchRequests.swift in Sources */,
+				A80204582AD4577C0065C00D /* WorkoutChartView.swift in Sources */,
+				A80204142ACB74790065C00D /* RecordWorkoutView.swift in Sources */,
+				A802049A2AE333EF0065C00D /* FilterMenuView.swift in Sources */,
+				A80204682AD93D4E0065C00D /* Calorie.swift in Sources */,
+				A80204272ACF85230065C00D /* MapCoordinator.swift in Sources */,
+				A80204B32AE49D4A0065C00D /* DistanceEntity+CoreDataClass.swift in Sources */,
+				A80204472AD223AB0065C00D /* WorkoutHistoryView.swift in Sources */,
 				A81DEB9A2AC908EF0098FB04 /* Persistence.swift in Sources */,
-				A81DEB932AC908ED0098FB04 /* ContentView.swift in Sources */,
+				A80204562AD3732A0065C00D /* WorkoutMetricsView.swift in Sources */,
+				A80204222ACDDDE30065C00D /* MapViewUIKit.swift in Sources */,
+				A80204CC2AE53A9A0065C00D /* Methods.swift in Sources */,
+				A80204B62AE49D4A0065C00D /* StepEntity+CoreDataProperties.swift in Sources */,
+				A80204432AD1BDA70065C00D /* MeasureCardView.swift in Sources */,
+				A80204902AE2741B0065C00D /* IncreaseGoalButtonView.swift in Sources */,
+				A80204052AC9B1E50065C00D /* TimerManager.swift in Sources */,
+				A802041C2ACC32FF0065C00D /* LocationManager.swift in Sources */,
+				A80204972AE27E3E0065C00D /* GoalsView.swift in Sources */,
+				A80204942AE275330065C00D /* GoalSetupView.swift in Sources */,
 				A81DEB912AC908ED0098FB04 /* FitnessApp.swift in Sources */,
+				A80204A22AE461940065C00D /* WorkoutType.swift in Sources */,
+				A80204B22AE49D4A0065C00D /* SpeedEntity+CoreDataProperties.swift in Sources */,
+				A80204812ADDF2DB0065C00D /* DailyStatisticsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +913,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -353,7 +928,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,6 +974,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -407,7 +983,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -428,11 +1004,14 @@
 				DEVELOPMENT_TEAM = Q34TQR7SAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitness/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location to compute the distance achieved during your workouts.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We will use device motion data to provide information such as the number of steps taken.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,11 +1036,14 @@
 				DEVELOPMENT_TEAM = Q34TQR7SAN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitness/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location to compute the distance achieved during your workouts.";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We will use device motion data to provide information such as the number of steps taken.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -8,88 +8,90 @@
 import SwiftUI
 
 struct RecordWorkoutView: View {
-    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: WorkoutViewModel
-    
-    init(workout: Binding<WorkoutType?>) {
-        if let workout = workout.wrappedValue {
-            _viewModel = .init(wrappedValue: WorkoutViewModel(type: workout))
-        } else {
-            _viewModel = .init(wrappedValue: WorkoutViewModel())
-        }
+    @Binding var workoutType: WorkoutType?
+    @State private var showAlert = false
+    @State private var timerIsStopped = false
+    @State private var finishedWorkout = false
+    let dataManager: CoreDataManager
+
+    init(dataManager: CoreDataManager, workoutType: Binding<WorkoutType?>) {
+        self.dataManager = dataManager
+        self._workoutType = workoutType
+        _viewModel = .init(wrappedValue: WorkoutViewModel(dataManager: dataManager, type: workoutType.wrappedValue))
+        
     }
     
     var body: some View {
         NavigationStack {
             ZStack {
-                Image(viewModel.workoutType?.background ?? "")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .ignoresSafeArea()
+                WorkoutBackgroundImageView(background: viewModel.workoutType?.background)
                 VStack {
-                    Image(systemName: viewModel.workoutType?.icon ?? "")
-                        .font(.system(size: 60))
-                        .padding(.bottom, 5)
-                        .foregroundColor(.white)
-                    if viewModel.workoutStarted {
-                        GeometryReader { geometry in
-                            VStack {
-                                Spacer()
-                                HStack {
-                                    Spacer()
-                                    ForEach(Measure.allCases, id: \.self) { measure in
-                                        VStack {
-                                            VStack {
-                                                Text(measure.rawValue)
-                                                Text("0.0")
-                                                Text(measure.unitOfMeasure)
-                                            }
-                                            .frame(width: geometry.size.width / 4)
-                                            .padding(2)
-                                            .background(.white.opacity(0.7))
-                                            .cornerRadius(10)
-                                        }
-                                        Spacer()
-                                    }
-                                }
-                                Spacer()
+                    WorkoutIconView(icon: viewModel.workoutType?.icon)
+                    if !viewModel.locationAccessIsDenied && !viewModel.locationAccessThrowsError {
+                        if viewModel.workoutStarted {
+                            MeasurementBannerView(
+                                distance: viewModel.distance,
+                                speed: viewModel.speed)
+                            Group {
+                                MapView(mapType: .moving,
+                                        startLocation: viewModel.startLocation,
+                                        route: viewModel.route,
+                                        endLocation: viewModel.endLocation)
                             }
                         }
-                        .frame(height: 100)
-                        .background(.black.opacity(0.7))
-                        Group {
-                            if #available(iOS 17.0, *) {
-                                MapViewSwiftUI(
-                                    locationManager: viewModel.locationManager)
-                            } else {
-                                MapViewUIKit(
-                                    locationManager: viewModel.locationManager)
-                            }
-                        }
-                        .cornerRadius(10)
-                        .padding()
-                        .opacity(0.7)
+                    }
+                    if viewModel.locationAccessIsDenied {
+                        Spacer()
+                        AccessDeniedView()
                     }
                     Spacer()
-                    TimerView(timer: viewModel.timer) {
-                        viewModel.beginWorkout()
-                    } stopAction: {
-                        viewModel.endWorkout()
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.black.opacity(0.7))
+                    TimerView(
+                        errorIsThrown: $viewModel.locationAccessThrowsError,
+                        accessIsDenied: $viewModel.locationAccessIsDenied,
+                        elapsedTime: viewModel.elapsedTime,
+                        timerIsNil: viewModel.timerIsNil,
+                        timerIsPaused: viewModel.timerIsPaused) {
+                            if !viewModel.locationAccessIsDenied && !viewModel.locationAccessThrowsError {
+                                viewModel.beginWorkout()
+                            }
+                        } pauseAction: {
+                            viewModel.pauseWorkout()
+                        } resumeAction: {
+                            viewModel.resumeWorkout()
+                        } stopAction: {
+                            timerIsStopped = true
+                            viewModel.pauseWorkout()
+                        }
+                        .alert("Are you sure ?", isPresented: $timerIsStopped) {
+                            Button("Finish Workout") {
+                                viewModel.endWorkout()
+                                viewModel.addWorkout()
+                                workoutType = nil
+                            }
+                            Button("Cancel", role: .cancel) {}
+                        } message: {
+                            Text("This will stop recording your current workout and save it to your history.")
+                        }
                 }
+            }
+            .onChange(of: viewModel.locationAccessError) { _ in
+                showAlert = viewModel.locationAccessThrowsError
+            }
+            .alert("Location Access Error", isPresented: $showAlert) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(viewModel.locationAccessError)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        dismiss()
-                        viewModel.endWorkout()
+                        viewModel.cancelWorkout()
+                        workoutType = nil
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.largeTitle)
-                            .foregroundColor(.white)
+                            .foregroundStyle(.white)
                     }
                 }
             }
@@ -99,6 +101,6 @@ struct RecordWorkoutView: View {
 }
 
 #Preview {
-    @State var workout: WorkoutType? = .running
-    return RecordWorkoutView(workout: $workout)
+    @State var workoutType: WorkoutType? = .running
+    return RecordWorkoutView(dataManager: .preview, workoutType: $workoutType)
 }

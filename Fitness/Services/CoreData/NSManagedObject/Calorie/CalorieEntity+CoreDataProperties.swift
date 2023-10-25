@@ -16,4 +16,5 @@ extension CalorieEntity {
     @NSManaged public var date: Date?
     @NSManaged public var type: Int16
     @NSManaged public var count: Int16
+    @NSManaged public var workout: WorkoutEntity
 }

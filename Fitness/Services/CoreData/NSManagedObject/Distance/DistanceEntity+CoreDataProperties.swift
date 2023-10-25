@@ -15,4 +15,5 @@ extension DistanceEntity {
     @NSManaged public var date: Date?
     @NSManaged public var type: Int16
     @NSManaged public var measure: Double
+    @NSManaged public var workout: WorkoutEntity?
 }

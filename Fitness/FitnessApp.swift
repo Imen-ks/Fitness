@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct FitnessApp: App {
-    let persistenceController = PersistenceController.shared
+    private let dataManager: CoreDataManager = .shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabBarView(dataManager: dataManager)
         }
     }
 }

@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct WorkoutIconView: View {
+    let icon: String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: icon ?? "")
+            .font(.system(size: 60))
+            .padding(.bottom, 5)
+            .foregroundStyle(.white)
     }
 }
 
 #Preview {
-    WorkoutIconView()
+    ZStack {
+        WorkoutIconView(icon: "figure.run")
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.black)
 }

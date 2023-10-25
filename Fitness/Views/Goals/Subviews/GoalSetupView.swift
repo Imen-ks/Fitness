@@ -17,7 +17,7 @@ struct GoalSetupView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(measureType)
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.accentColor)
                 .padding(.horizontal, 20)
@@ -30,7 +30,7 @@ struct GoalSetupView: View {
                     Text(measureValue)
                     Text(unitOfMeasure)
                 }
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.semibold)
                 Spacer()
                 IncreaseGoalButtonView {
@@ -38,7 +38,7 @@ struct GoalSetupView: View {
                 }
             }
             .padding(.horizontal, 20)
-            .foregroundStyle(Color(UIColor.secondaryLabel))
+            .foregroundStyle(.gray)
         }
     }
 }

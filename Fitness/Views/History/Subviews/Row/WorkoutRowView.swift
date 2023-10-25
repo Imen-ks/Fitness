@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct WorkoutRowView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @ObservedObject var viewModel: WorkoutHistoryViewModel
     let workout: Workout
 
     var body: some View {
         ZStack {
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundStyle(colorScheme == .dark ? .white.opacity(0.3) : .black.opacity(0.7))
             HStack(spacing: 5) {
                 VStack(spacing: 5) {
                     WorkoutDateAndTypeView(workout: workout)
@@ -27,12 +29,16 @@ struct WorkoutRowView: View {
             .font(.title3)
             .foregroundStyle(.white)
         }
-        .overlay(
-                Rectangle()
-                    .stroke(colorScheme == .dark ? Color.accentColor.opacity(0.3) : .white, lineWidth: 5)
-                    .cornerRadius(4)
-        )
-        .padding(.bottom, colorScheme == .dark ? 1 : 0)
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            Button {
+                withAnimation {
+                    viewModel.delete(workout)
+                }
+            } label: {
+                Image(systemName: "trash")
+            }
+            .tint(.red)
+        }
     }
 }
 
@@ -46,9 +52,8 @@ struct WorkoutRowView: View {
                     EmptyView()
                 }
                 WorkoutRowView(
-                    workout: MockData.mockWorkout)
-                .background(.black.opacity(0.7))
-                .cornerRadius(4)
+                    viewModel: WorkoutHistoryViewModel(dataManager: .preview),
+                    workout: PersistenceController.getWorkoutForPreview(persistenceController: PersistenceController.previewPersistenceController))
             }
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
         }

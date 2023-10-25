@@ -19,8 +19,12 @@ class CoreDataManager: ObservableObject {
     static let shared = CoreDataManager(type: .normal)
     static let preview = CoreDataManager(type: .preview)
 
-    @Published var workouts: [Workout] = []
-    @Published var filteredworkouts: [Workout] = []
+    @Published var workouts: [WorkoutEntity] = []
+    @Published var distances: [DistanceEntity] = []
+    @Published var speeds: [SpeedEntity] = []
+    @Published var calories: [CalorieEntity] = []
+    @Published var steps: [StepEntity] = []
+    @Published var filteredWorkouts: [WorkoutEntity] = []
 
     init(type: DataManagerType) {
         switch type {
@@ -28,29 +32,14 @@ class CoreDataManager: ObservableObject {
             persistenceController = PersistenceController()
         case .preview:
             persistenceController = PersistenceController(inMemory: true)
-            dataForPreview(persistenceController: persistenceController)
+            mockData(persistenceController: persistenceController)
         case .testing:
             persistenceController = PersistenceController(inMemory: true)
         }
         fetchWorkouts()
-    }
-}
-
-extension CoreDataManager {
-    func delete(_ object: NSManagedObject) {
-        persistenceController.container.viewContext.delete(object)
-        save()
-    }
-
-    func save() {
-        if persistenceController.container.viewContext.hasChanges {
-            do {
-                try persistenceController.container.viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-        fetchWorkouts()
+        fetchDistance()
+        fetchSpeed()
+        fetchCalories()
+        fetchSteps()
     }
 }

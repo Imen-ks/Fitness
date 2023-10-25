@@ -10,20 +10,23 @@ import SwiftUI
 struct MeasureDonutView: View {
     @Environment(\.colorScheme) private var colorScheme
     let measure: Double
+    let formattedMeasure: String
     let unitOfMeasure: String
     let icon: String
     let goal: Double
+    let height: CGFloat
 
     var body: some View {
         Circle()
             .strokeBorder(colorScheme == .dark ? .white.opacity(0.3) : .black.opacity(0.7), lineWidth: 40)
             .overlay {
-                VStack(spacing: 3) {
+                VStack(spacing: 5) {
                     Image(systemName: icon)
-                    Text(String(measure))
-                    Text(String(unitOfMeasure))
+                        .font(.system(size: 50))
+                    Text(formattedMeasure)
+                    Text(unitOfMeasure)
                 }
-                .font(.title)
+                .font(.largeTitle)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.accentColor)
             }
@@ -32,27 +35,30 @@ struct MeasureDonutView: View {
                     .rotation(Angle(degrees: -90))
                     .stroke(Color.accentColor, lineWidth: 20)
             }
-            .padding(.horizontal)
+            .frame(height: height)
     }
 }
 
 #Preview {
-    let distance: Distance = .init(workoutType: .running, date: Date(), measure: .init(value: 2236, unit: .meters))
-    let calories: Calorie = .init(workoutType: .running, date: Date(), count: 326)
-    let steps: Step = .init(workoutType: .running, date: Date(), count: 10350)
-    return VStack(spacing: 10) {
-        MeasureDonutView(measure: distance.measure.value / 1000,
-                                unitOfMeasure: distance.type.unitOfMeasure,
-                                icon: distance.type.icon,
-                                goal: 2500 / 1000)
-        MeasureDonutView(measure: Double(calories.count),
-                                unitOfMeasure: calories.type.unitOfMeasure,
-                                icon: calories.type.icon,
-                                goal: 350)
-        MeasureDonutView(measure: Double(steps.count),
-                                unitOfMeasure: steps.type.unitOfMeasure,
-                                icon: steps.type.icon,
-                                goal: 10000)
+    VStack(spacing: 5) {
+        MeasureDonutView(measure: 2236,
+                         formattedMeasure: "2.236",
+                         unitOfMeasure: Measure.distance.unitOfMeasure,
+                         icon: Measure.distance.icon,
+                         goal: 2500,
+                         height: .infinity)
+        MeasureDonutView(measure: 326,
+                         formattedMeasure: "326",
+                         unitOfMeasure: Measure.calorie.unitOfMeasure,
+                         icon: Measure.calorie.icon,
+                         goal: 350,
+                         height: .infinity)
+        MeasureDonutView(measure: 10350,
+                         formattedMeasure: "10 350",
+                         unitOfMeasure: Measure.step.unitOfMeasure,
+                         icon: Measure.step.icon,
+                         goal: 10000,
+                         height: .infinity)
     }
 }
 

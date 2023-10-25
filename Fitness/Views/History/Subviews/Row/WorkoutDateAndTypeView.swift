@@ -12,15 +12,15 @@ struct WorkoutDateAndTypeView: View {
 
     var body: some View {
         HStack {
-            Text(dateFormatter.string(for: workout?.date)?.uppercased() ?? "")
+            Text(workout?.date?.formatted(date: .abbreviated, time: .omitted).uppercased() ?? "")
             Spacer()
-            Text(timeFormatter.string(for: workout?.date) ?? "")
+            Text(workout?.date?.formatted(date: .omitted, time: .shortened) ?? "")
         }
         .font(.title2)
         .fontWeight(.bold)
         .foregroundStyle(Color.accentColor)
         HStack {
-            Text(workout?.type?.rawValue.uppercased() ?? "")
+            Text(workout?.type?.name ?? "")
                 .padding(5)
                 .font(.caption)
                 .foregroundStyle(.white)
@@ -29,20 +29,10 @@ struct WorkoutDateAndTypeView: View {
             Spacer()
         }
     }
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
-
-    private let timeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        return formatter
-    }()
 }
 
 #Preview {
-    WorkoutDateAndTypeView(workout: MockData.mockWorkout)
+    WorkoutDateAndTypeView(
+        workout: PersistenceController.getWorkoutForPreview(persistenceController: PersistenceController.previewPersistenceController))
         .padding(.horizontal)
 }

@@ -33,12 +33,12 @@ struct MapView: View {
 
 #Preview {
     MapView(mapType: .moving,
-            startLocation: MockData.mockCoords.first,
-            route: MockData.mockCoords,
-            endLocation: MockData.mockCoords.last)
+            startLocation: PersistenceController.mockCoords.first,
+            route: PersistenceController.mockCoords,
+            endLocation: PersistenceController.mockCoords.last)
 }
 
 enum MapType {
-    case fixed
+    case stationary
     case moving
 }

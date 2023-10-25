@@ -7,11 +7,20 @@
 
 import Foundation
 
-enum Measure: String, CaseIterable {
-    case distance = "Distance"
-    case speed = "Speed"
-    case step = "Steps"
-    case calorie = "Calories"
+enum Measure: Int16, CaseIterable {
+    case distance
+    case speed
+    case step
+    case calorie
+
+    var name: String {
+        switch self {
+        case .distance: return "Distance"
+        case .speed: return "Speed"
+        case .step: return "Steps"
+        case .calorie: return "Calories"
+        }
+    }
     
     var unitOfMeasure: String {
         switch self {

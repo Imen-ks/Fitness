@@ -16,7 +16,7 @@ struct MapViewSwiftUI: View {
     let route: [CLLocation]
     let endLocation: CLLocation?
     @State private var position: MapCameraPosition
-    
+
     init(mapType: MapType, startLocation: CLLocation?,
          route: [CLLocation], endLocation: CLLocation?) {
         self.mapType = mapType
@@ -29,8 +29,8 @@ struct MapViewSwiftUI: View {
 
     var body: some View {
         Map(position: $position,
-            bounds: MapCameraBounds(minimumDistance: 4500,
-                                    maximumDistance: 4500)) {
+            bounds: MapCameraBounds(minimumDistance: 3000,
+                                    maximumDistance: 3000)) {
             if startLocation != nil {
                 Annotation("Start",
                            coordinate: startLocation?.coordinate ?? CLLocationCoordinate2D()) {
@@ -65,7 +65,7 @@ struct MapViewSwiftUI: View {
             }
         }
         .cornerRadius(10)
-        .padding()
+        .padding(.vertical)
         .opacity(0.7)
         .onChange(of: route) {
             if mapType == .moving {
@@ -79,9 +79,9 @@ struct MapViewSwiftUI: View {
     if #available(iOS 17.0, *) {
         return MapViewSwiftUI(
             mapType: .moving,
-            startLocation: MockData.mockCoords.first,
-            route: MockData.mockCoords,
-            endLocation: MockData.mockCoords.last)
+            startLocation: PersistenceController.mockCoords.first,
+            route: PersistenceController.mockCoords,
+            endLocation: PersistenceController.mockCoords.last)
     } else {
         return EmptyView()
     }

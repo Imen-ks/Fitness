@@ -17,7 +17,7 @@ struct DecreaseGoalButtonView: View {
             }
         } label: {
             Image(systemName: "minus")
-                .font(.largeTitle)
+                .font(.title)
                 .fontWeight(.bold)
                 .frame(width: 25, height: 25)
                 .padding()

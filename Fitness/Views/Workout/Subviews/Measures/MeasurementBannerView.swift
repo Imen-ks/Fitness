@@ -8,47 +8,35 @@
 import SwiftUI
 
 struct MeasurementBannerView: View {
-    let measure: Measure
+    let distance: Distance?
+    let speed: Speed?
     var body: some View {
-        VStack {
+        GeometryReader { geometry in
+            let size = geometry.size.width / 2.5
             VStack {
-                Text(measure.rawValue)
-                Text("0.0")
-                Text(measure.unitOfMeasure)
+                HStack {
+                    Spacer()
+                    MeasureCardView(measure: distance?.type,
+                                    value: distance?.measure.value,
+                                    size: size)
+                    Spacer()
+                    MeasureCardView(measure: speed?.type,
+                                    value: speed?.measure.value,
+                                    size: size)
+                    Spacer()
+                }
             }
-            .padding(2)
-            .background(.white.opacity(0.7))
-            .cornerRadius(10)
         }
+        .padding(.vertical)
+        .frame(height: 100)
+        .background(.black.opacity(0.7))
     }
 }
 
 #Preview {
-    GeometryReader { geometry in
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                MeasurementBannerView(measure: .distance)
-                Spacer()
-            }
-            Spacer()
-        }
-    }
-    .frame(height: 100)
-    .background(.black.opacity(0.7))
-}
-
-enum Measure: String, CaseIterable {
-    case distance = "Distance"
-    case speed = "Speed"
-    case altitude = "Altitude"
-    
-    var unitOfMeasure: String {
-        switch self {
-        case .distance: return "km"
-        case .speed: return "km/h"
-        case .altitude: return "m"
-        }
-    }
+    MeasurementBannerView(
+        distance: .init(id: UUID(), workoutType: nil, date: nil,
+                        measure: .init(value: 0, unit: .meters)),
+        speed: .init(id: UUID(), workoutType: nil, date: nil,
+                     measure: .init(value: 0, unit: .metersPerSecond)))
 }

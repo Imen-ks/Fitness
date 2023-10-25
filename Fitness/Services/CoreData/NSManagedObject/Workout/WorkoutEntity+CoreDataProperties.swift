@@ -14,9 +14,14 @@ extension WorkoutEntity {
     @NSManaged public var uuid: UUID
     @NSManaged public var date: Date?
     @NSManaged public var type: Int16
-    @NSManaged public var route: [CLLocation]?
+    @NSManaged public var routeLatitudes: [CLLocationDegrees]?
+    @NSManaged public var routeLongitudes: [CLLocationDegrees]?
     @NSManaged public var duration: TimeInterval
-    @NSManaged public var distances: [Measurement<UnitLength>]?
-    @NSManaged public var speeds: [Measurement<UnitSpeed>]?
-    @NSManaged public var altitudes: [Measurement<UnitLength>]?
+    @NSManaged public var distances: [Double]?
+    @NSManaged public var speeds: [Double]?
+    @NSManaged public var altitudes: [Double]?
+    @NSManaged public var distance: DistanceEntity?
+    @NSManaged public var speed: SpeedEntity?
+    @NSManaged public var calories: CalorieEntity?
+    @NSManaged public var steps: StepEntity?
 }

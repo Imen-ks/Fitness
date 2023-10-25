@@ -12,7 +12,7 @@ struct AccessDeniedView: View {
         VStack {
             Text("Location Services Disabled")
                 .font(.title)
-                .fontWeight(.bold)
+                .fontWeight(.semibold)
                 .foregroundStyle(Color.accentColor)
                 .padding(.bottom, 5)
             Text("Please go to your Settings and enable Location Services to be able to start recording a workout.")
