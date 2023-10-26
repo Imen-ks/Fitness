@@ -34,4 +34,8 @@ final class GlobalStatisticsViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
+
+    func updateView(){
+        self.objectWillChange.send()
+    }
 }

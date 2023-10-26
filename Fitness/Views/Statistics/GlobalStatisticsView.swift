@@ -76,6 +76,7 @@ struct GlobalStatisticsView: View {
                 }
                 
             }
+            .onAppear { viewModel.updateView() } // to update goals
         }
     }
 }

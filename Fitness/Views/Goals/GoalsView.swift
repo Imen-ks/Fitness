@@ -16,9 +16,9 @@ extension UserDefaults {
 }
 
 struct GoalsView: View {
-    @AppStorage(UserDefaults.Keys.distance.rawValue) private var distance: Double = 5
-    @AppStorage(UserDefaults.Keys.calories.rawValue) private var calories: Int = 500
-    @AppStorage(UserDefaults.Keys.steps.rawValue) private var steps: Int = 10000
+    @AppStorage(UserDefaults.Keys.distance.rawValue) private var distance: Double = 0
+    @AppStorage(UserDefaults.Keys.calories.rawValue) private var calories: Int = 0
+    @AppStorage(UserDefaults.Keys.steps.rawValue) private var steps: Int = 0
 
 
     var body: some View {
@@ -68,25 +68,38 @@ struct GoalsView: View {
         }()
         
         switch measure {
-        case .distance: return formatter.string(for: distance) ?? ""
-        case .calories: return formatter.string(for: Double(calories)) ?? ""
-        case .steps: return formatter.string(for: Double(steps)) ?? ""
+        case .distance: return formatter.string(for: abs(distance)) ?? ""
+        case .calories: return formatter.string(for: abs(Double(calories))) ?? ""
+        case .steps: return formatter.string(for: abs(Double(steps))) ?? ""
         }
     }
 
     private func decreaseGoal(for measure: UserDefaults.Keys) {
         switch measure {
-        case .distance: UserDefaults.standard.setValue(distance - 0.1, forKey: measure.rawValue)
-        case .calories: UserDefaults.standard.setValue(calories - 10, forKey: measure.rawValue)
-        case .steps: UserDefaults.standard.setValue(steps - 100, forKey: measure.rawValue)
+        case .distance:
+            if UserDefaults.standard.double(forKey: measure.rawValue) <= 0 {
+                break
+            } else { UserDefaults.standard.setValue(distance - 0.5, forKey: measure.rawValue)
+            }
+        case .calories:
+            if UserDefaults.standard.double(forKey: measure.rawValue) <= 0 {
+                break
+            } else { UserDefaults.standard.setValue(calories - 50, forKey: measure.rawValue)
+            }
+        case .steps: 
+            if UserDefaults.standard.double(forKey: measure.rawValue) <= 0 {
+                break
+            } else {
+                UserDefaults.standard.setValue(steps - 500, forKey: measure.rawValue)
+            }
         }
     }
 
     private func increaseGoal(for measure: UserDefaults.Keys) {
         switch measure {
-        case .distance: UserDefaults.standard.setValue(distance + 0.1, forKey: measure.rawValue)
-        case .calories: UserDefaults.standard.setValue(calories + 10, forKey: measure.rawValue)
-        case .steps: UserDefaults.standard.setValue(steps + 100, forKey: measure.rawValue)
+        case .distance: UserDefaults.standard.setValue(distance + 0.5, forKey: measure.rawValue)
+        case .calories: UserDefaults.standard.setValue(calories + 50, forKey: measure.rawValue)
+        case .steps: UserDefaults.standard.setValue(steps + 500, forKey: measure.rawValue)
         }
     }
 }
