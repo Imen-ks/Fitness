@@ -30,9 +30,6 @@ final class LocationManager: NSObject, ObservableObject {
     var speedPublisher: AnyPublisher<Measurement<UnitSpeed>, Never> {
         $speeds.flatMap { speeds in speeds.publisher }.eraseToAnyPublisher()
     }
-    var altitudePublisher: AnyPublisher<Measurement<UnitLength>, Never> {
-        $altitudes.flatMap { altitudes in altitudes.publisher }.eraseToAnyPublisher()
-    }
     
     override init() {
         self.locationManager = CLLocationManager()
