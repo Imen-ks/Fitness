@@ -1,5 +1,7 @@
 # Fitness Application
 
+![featured](https://github.com/Imen-ks/Fitness/blob/main/Fitness/Assets.xcassets/Fitness.png)
+
 ## Features
 
 ### Recording a workout
